@@ -3,273 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Security Homepage</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        header nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-        }
-
-        header .btn {
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            justify-content: space-between;
-            padding: 50px;
-        }
-
-        .hero .left, .hero .right {
-            width: 45%;
-        }
-
-        .hero .left {
-            border: 1px solid #ccc;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-        }
-
-        .hero .right {
-            background-color: #ddd;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
-        }
-
-        /* Warning Section */
-        .warning {
-            background-color: #ff6347;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* Our Service Section */
-        .service {
-            padding: 50px;
-        }
-
-        .service h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .service .content {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .service .content .text {
-            width: 45%;
-        }
-
-        .service .content .image {
-            width: 45%;
-            background-color: #ddd;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .service .tabs {
-            margin-top: 20px;
-        }
-
-        .service .tabs button {
-            padding: 10px 20px;
-            margin-right: 10px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .service .tagline {
-            margin-top: 20px;
-            font-style: italic;
-        }
-
-        /* Cyber Tools Section */
-        .tools {
-            padding: 50px;
-            text-align: center;
-        }
-
-        .tools h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .tools .cards {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .tools .card {
-            width: 30%;
-            border: 1px solid #ccc;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .tools .card .image {
-            background-color: #ddd;
-            height: 150px;
-            margin-bottom: 20px;
-        }
-
-        .tools .card a {
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Footer */
-        footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-top: 1px solid #ccc;
-        }
-
-        footer .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        footer .links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-        }
-
-        footer .social a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-        }
-    </style>
+    <title>Cyber Security Homepage - Hack The Box Style</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">Logo</div>
+        <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo-img">
+        </div>
         <nav>
-            <a href="#">Link one</a>
-            <a href="#">Link two</a>
-            <a href="#">Link three</a>
-            <a href="#">Link four</a>
+            <a href="#">Challenges</a>
+            <a href="#">Machines</a>
+            <a href="#">Community</a>
+            <a href="#">Academy</a>
         </nav>
-        <a href="#" class="btn">Button</a>
+        <a href="#" class="btn">Join Now</a>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="left">Welcome Text and overall description of the website</div>
-        <div class="right">This will be a photo or a video related to cyber security.</div>
+        <div class="left">
+            <h1>Welcome to Your Cyber Journey</h1>
+            <p>Master cybersecurity skills with hands-on challenges, machines, and real-world scenarios. Join a global community of hackers and defenders.</p>
+        </div>
+        <div class="right">
+            <img src="hero-image.jpg" alt="Cyber Security Visual">
+        </div>
     </section>
 
     <!-- Warning Section -->
     <section class="warning">
-        This is different devices or cyber measure with their brand to familiarize users with them.
+        Explore tools, devices, and techniques used by professionals to secure systems and networks.
     </section>
 
     <!-- Our Service Section -->
     <section class="service">
-        <h2>OUR SERVICE</h2>
+        <h2>OUR SERVICES</h2>
         <div class="content">
             <div class="text">
-                <p>I outline a brief summary of the purpose of the website and why it is important for visitors.</p>
+                <p>We provide a platform to learn, practice, and master cybersecurity through interactive challenges and labs.</p>
                 <div class="tabs">
-                    <button>Tab</button>
-                    <button>Tab</button>
-                    <button>Tab</button>
+                    <button>Challenges</button>
+                    <button>Machines</button>
+                    <button>Training</button>
                 </div>
-                <p>Showing what each part my website and perhaps a line to connect them.</p>
-                <p class="tagline">Tagline</p>
+                <p>Each section of our platform is designed to help you grow your skills and connect with others.</p>
+                <p class="tagline">"Hack, Learn, Secure."</p>
             </div>
-            <div class="image"></div>
+            <div class="image">
+                <img src="service-image.jpg" alt="Service Visual">
+            </div>
         </div>
     </section>
 
     <!-- Cyber Tools Section -->
     <section class="tools">
-        <h2>Cyber tools overview</h2>
+        <h2>CYBER TOOLS OVERVIEW</h2>
         <div class="cards">
             <div class="card">
-                <div class="image"></div>
-                <h3>Category</h3>
-                <p>Different tools</p>
-                <p>Description</p>
-                <a href="#">Read more</a>
+                <div class="image">
+                    <img src="tool1.jpg" alt="Tool 1">
+                </div>
+                <h3>Penetration Testing</h3>
+                <p>Tools for testing system vulnerabilities.</p>
+                <p>Explore tools like Nmap, Metasploit, and more.</p>
+                <a href="#">Read More</a>
             </div>
             <div class="card">
-                <div class="image"></div>
-                <h3>Category</h3>
-                <p>Different tools</p>
-                <p>Description</p>
-                <a href="#">Read more</a>
+                <div class="image">
+                    <img src="tool2.jpg" alt="Tool 2">
+                </div>
+                <h3>Network Security</h3>
+                <p>Protect your networks with top tools.</p>
+                <p>Learn about Wireshark, Snort, and others.</p>
+                <a href="#">Read More</a>
             </div>
             <div class="card">
-                <div class="image"></div>
-                <h3>Category</h3>
-                <p>Different tools</p>
-                <p>Description</p>
-                <a href="#">Read more</a>
+                <div class="image">
+                    <img src="tool3.jpg" alt="Tool 3">
+                </div>
+                <h3>Forensics</h3>
+                <p>Investigate breaches with forensic tools.</p>
+                <p>Discover Autopsy, FTK, and more.</p>
+                <a href="#">Read More</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="logo">Logo</div>
+        <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo-img">
+        </div>
         <div class="links">
-            <p>© 2024 Your Website. All rights reserved.</p>
+            <p>© 2025 Cyber Platform. All rights reserved.</p>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
         </div>
         <div class="social">
-            <a href="#">🔵</a>
-            <a href="#">🐦</a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="discord-icon.png" alt="Discord"></a>
         </div>
     </footer>
 </body>
