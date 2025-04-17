@@ -23,12 +23,16 @@ header {
 
 header .logo-img {
     height: 40px;
+    filter: 
+    /* Soft blur */
+     brightness(0.90)/* Slight darkening */
+   contrast(0.9);  
 }
 
 header nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #9fef00;
+    color: #7bef00;
     font-weight: 500;
     transition: color 0.3s;
 }
@@ -39,7 +43,7 @@ header nav a:hover {
 
 header .btn {
     padding: 10px 20px;
-    background-color: #9fef00;
+    background-color: #5b8507;
     color: #0d1a26;
     text-decoration: none;
     border-radius: 5px;
@@ -47,10 +51,30 @@ header .btn {
     transition: background-color 0.3s;
 }
 
+/* hover effect for navgation */
 header .btn:hover {
     background-color: #7cc900;
 }
 
+/* Header Navigation Hover Effect */
+header nav a {
+    position: relative; /* Needed for pseudo-element positioning */
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -20px;
+    left: 0;
+    background-color: #7cc900; /* Red color matching your warning section */
+    transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
 /* Hero Section */
 .hero {
     display: flex;
@@ -230,10 +254,14 @@ footer {
     border-top: 1px solid #2c3e50;
 }
 
+
 footer .logo-img {
     height: 40px;
+    filter: 
+         /* Soft blur */
+        brightness(0.90) /* Slight darkening */
+        contrast(0.9); /* Enhances edges */
 }
-
 footer .links p {
     font-size: 14px;
     color: #b0b0b0;
@@ -254,4 +282,89 @@ footer .links a:hover {
 footer .social img {
     height: 24px;
     margin: 0 10px;
+}
+
+/* video in the background */
+/* Hero Section Video Background */
+.hero {
+    position: relative; /* Needed for absolute positioning of child elements */
+    overflow: hidden; /* Prevents video from overflowing */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Vertically center content */
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind content */
+}
+
+.hero-video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers entire area */
+    opacity: 0.5;
+     /* Adjust transparency as needed */
+}
+
+.hero-content-wrapper {
+    position: relative; /* Brings content above video */
+    z-index: 1; /* Above video */
+    width: 100%;
+    padding: 0 50px; /* Match your existing hero padding */
+    display: flex;
+    justify-content: space-between; /* Maintains your layout */
+}
+
+/* Container for hero with video */
+.video-hero-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Styles for basic content page */
+.basic-content {
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.basic-content h1 {
+    font-size: 36px;
+    color: #9fef00;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.basic-section {
+    background-color: #1a2b3c;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: 1px solid #2c3e50;
+}
+
+.basic-section h2 {
+    color: #9fef00;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.basic-section p {
+    margin-bottom: 15px;
+    color: #b0b0b0;
+}
+
+.basic-section ul {
+    margin-left: 20px;
+    color: #b0b0b0;
+}
+
+.basic-section li {
+    margin-bottom: 8px;
 }
