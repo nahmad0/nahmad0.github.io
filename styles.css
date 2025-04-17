@@ -1,3 +1,4 @@
+/* RESET + BASE STYLES */
 * {
     margin: 0;
     padding: 0;
@@ -11,91 +12,94 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
-/* header {
+/* ========== HEADER ========== */
+header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 20px 50px;
     background-color: #1a2b3c;
     border-bottom: 1px solid #2c3e50;
+    flex-wrap: wrap;
 }
-header nav {
- 
-    transition: all 3s ease;
-} */
- /* Default hidden state */
-header nav {
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
-}
-
-/* When active (clicked via hamburger) */
-header nav.active {
-    max-height: 500px; /* Enough to show all items */
-    opacity: 1;
-}
-
 
 header .logo-img {
     height: 40px;
-    filter: 
-    /* Soft blur */
-     brightness(0.90)/* Slight darkening */
-   contrast(0.9);  
+    filter: brightness(0.90) contrast(0.9);
 }
 
-header nav a {
-    margin: 0 15px;
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #9fef00;
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-bottom: 10px;
+}
+
+/* ========== NAVIGATION ========== */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-container nav {
+    display: flex;
+    gap: 15px;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.nav-container nav a {
     text-decoration: none;
     color: #7bef00;
     font-weight: 500;
+    position: relative;
     transition: color 0.3s;
 }
 
-header nav a:hover {
+.nav-container nav a:hover {
     color: #e0e0e0;
 }
 
-header .btn {
-    padding: 10px 20px;
-    background-color: #5b8507;
-    color: #0d1a26;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-/* hover effect for navgation */
-header .btn:hover {
-    background-color: #7cc900;
-}
-
-/* Header Navigation Hover Effect */
-header nav a {
-    position: relative; /* Needed for pseudo-element positioning */
-}
-
-header nav a::after {
+.nav-container nav a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -20px;
+    bottom: -5px;
     left: 0;
-    background-color: #7cc900; /* Red color matching your warning section */
-    transition: width 0.3s ease;
+    background-color: #7cc900;
+    transition: width 1s  ease-out , background-color 0.5s;
 }
 
-header nav a:hover::after {
+.nav-container nav a:hover::after {
     width: 100%;
 }
-/* Hero Section */
+
+.signup-btn {
+    background-color: #5b8507;
+    color: #0d1a26;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+.signup-btn:hover {
+    background-color: #7cc900;
+}
+
+/* ========== HERO ========== */
 .hero {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 80px 50px;
     background: linear-gradient(45deg, #1a2b3c, #0d1a26);
@@ -126,7 +130,39 @@ header nav a:hover::after {
     border: 2px solid #9fef00;
 }
 
-/* Warning Section */
+.video-hero-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ========== SECTIONS ========== */
+
 .warning {
     background-color: #ff5555;
     color: #0d1a26;
@@ -135,36 +171,39 @@ header nav a:hover::after {
     font-weight: bold;
 }
 
-/* Our Service Section */
-.service {
+.service,
+.tools {
     padding: 80px 50px;
     background-color: #1a2b3c;
 }
 
-.service h2 {
+.service h2,
+.tools h2 {
     font-size: 36px;
     color: #9fef00;
     margin-bottom: 40px;
     text-transform: uppercase;
+    text-align: center;
 }
 
-.service .content {
+.service .content,
+.tools .cards {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 
-.service .content .text {
-    width: 50%;
+.service .text,
+.service .image,
+.tools .card {
+    width: 45%;
 }
 
-.service .content .text p {
+.service .text p,
+.tools .card p {
     font-size: 16px;
     color: #b0b0b0;
-    margin-bottom: 20px;
-}
-
-.service .tabs {
-    margin: 20px 0;
+    margin-bottom: 15px;
 }
 
 .service .tabs button {
@@ -183,43 +222,7 @@ header nav a:hover::after {
     color: #0d1a26;
 }
 
-.service .tagline {
-    font-style: italic;
-    color: #9fef00;
-}
-
-.service .content .image {
-    width: 45%;
-}
-
-.service .content .image img {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid #9fef00;
-}
-
-/* Cyber Tools Section */
-.tools {
-    padding: 80px 50px;
-    text-align: center;
-    background-color: #0d1a26;
-}
-
-.tools h2 {
-    font-size: 36px;
-    color: #9fef00;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-}
-
-.tools .cards {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
 .tools .card {
-    width: 30%;
     background-color: #1a2b3c;
     padding: 20px;
     border-radius: 10px;
@@ -231,24 +234,12 @@ header nav a:hover::after {
     transform: translateY(-5px);
 }
 
-.tools .card .image img {
+.tools .card img {
     width: 100%;
     height: 150px;
     object-fit: cover;
     border-radius: 5px;
     border: 1px solid #9fef00;
-}
-
-.tools .card h3 {
-    font-size: 24px;
-    color: #9fef00;
-    margin: 20px 0 10px;
-}
-
-.tools .card p {
-    font-size: 14px;
-    color: #b0b0b0;
-    margin-bottom: 10px;
 }
 
 .tools .card a {
@@ -262,7 +253,7 @@ header nav a:hover::after {
     color: #e0e0e0;
 }
 
-/* Footer */
+/* ========== FOOTER ========== */
 footer {
     display: flex;
     justify-content: space-between;
@@ -270,27 +261,25 @@ footer {
     padding: 20px 50px;
     background-color: #1a2b3c;
     border-top: 1px solid #2c3e50;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-
 
 footer .logo-img {
     height: 40px;
-    filter: 
-         /* Soft blur */
-        brightness(0.90) /* Slight darkening */
-        contrast(0.9); /* Enhances edges */
+    filter: brightness(0.90) contrast(0.9);
 }
-footer .links p {
+
+footer .links p,
+footer .links a {
     font-size: 14px;
     color: #b0b0b0;
-    margin-bottom: 10px;
 }
 
 footer .links a {
     margin: 0 10px;
     text-decoration: none;
     color: #9fef00;
-    font-size: 14px;
 }
 
 footer .links a:hover {
@@ -302,141 +291,69 @@ footer .social img {
     margin: 0 10px;
 }
 
-/* video in the background */
-/* Hero Section Video Background */
-.hero {
-    position: relative; /* Needed for absolute positioning of child elements */
-    overflow: hidden; /* Prevents video from overflowing */
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    align-items: center; /* Vertically center content */
-}
-
-.hero-video-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0; /* Behind content */
-}
-
-.hero-video-bg video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures video covers entire area */
-    opacity: 0.5;
-     /* Adjust transparency as needed */
-}
-
-.hero-content-wrapper {
-    position: relative; /* Brings content above video */
-    z-index: 1; /* Above video */
-    width: 100%;
-    padding: 0 50px; /* Match your existing hero padding */
-    display: flex;
-    justify-content: space-between; /* Maintains your layout */
-}
-
-/* Container for hero with video */
-.video-hero-container {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* Styles for basic content page */
-.basic-content {
-    padding: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.basic-content h1 {
-    font-size: 36px;
-    color: #9fef00;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.basic-section {
-    background-color: #1a2b3c;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    border: 1px solid #2c3e50;
-}
-
-.basic-section h2 {
-    color: #9fef00;
-    margin-bottom: 15px;
-    font-size: 24px;
-}
-
-.basic-section p {
-    margin-bottom: 15px;
-    color: #b0b0b0;
-}
-
-.basic-section ul {
-    margin-left: 20px;
-    color: #b0b0b0;
-}
-
-.basic-section li {
-    margin-bottom: 8px;
-}
+/* ========== RESPONSIVE ========== */
 
 
 
-/* ===================== */
-/* ===================== */
 
-.hamburger {
-    display: none; /* hidden by default */
-}
 
-/* Mobile styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         padding: 20px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        width: 100%;
     }
 
     .hamburger {
         display: block;
-        background: none;
-        border: none;
-        color: #9fef00;
-        font-size: 28px;
-        cursor: pointer;
         margin-left: auto;
         margin-bottom: 10px;
     }
 
-    header nav {
-        display: none;
+    .nav-container nav {
         flex-direction: column;
         width: 100%;
         overflow: hidden;
         max-height: 0;
         opacity: 0;
-        transition: max-height 0.4s ease, opacity 0.3s ease;
+
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+        padding: 0;
     }
 
-    header nav.active {
+    .nav-container nav.active {
         display: flex;
-        padding: 10px 0;
         max-height: 500px;
-        opacity: 1;
+        opacity: 1;  
+        padding: 10px 0;
+        visibility: visible;
+/* was makking changes here */
+       
     }
 
-    header nav a {
+    .nav-container nav a {
         padding: 10px 0;
         width: 100%;
         border-bottom: 1px solid #2c3e50;
         margin: 0;
+    }
+
+    .signup-btn {
+        display: none;
+        width: 100%;
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    .nav-container nav.active + .signup-btn {
+        display: block;
     }
 
     .hero {
@@ -446,17 +363,10 @@ footer .social img {
     }
 
     .hero .left,
-    .hero .right {
-        width: 100%;
-    }
-
-    .service .content {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .service .content .text,
-    .service .content .image {
+    .hero .right,
+    .service .text,
+    .service .image,
+    .tools .card {
         width: 100%;
     }
 
@@ -465,14 +375,9 @@ footer .social img {
         align-items: center;
     }
 
-    .tools .card {
-        width: 90%;
-    }
-
     footer {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
     }
 
     .video-hero-container {
@@ -483,4 +388,3 @@ footer .social img {
         height: auto;
     }
 }
-
