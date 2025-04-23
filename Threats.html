@@ -3,9 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Threat Awareness - Cybersecurity Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header>
+        <button class="hamburger">&#9776;</button>
+        <img src="vid/Logo Convwer.gif" alt="Logo" class="logo-img">
+        <div class="nav-container">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="basics.html">Basics</a>
+                <a href="Threats.html" class="active">Threats</a>
+                <a href="tools.html">Tools</a>
+                <a href="news.html">News</a>
+                <a href="#">IP Check</a>
+            </nav>
+            <a href="#" class="signup-btn">Sign Up</a>
+        </div>
+    </header>
+    <div class="video-hero-container">
+        <section class="hero">
+            <div class="hero-video-bg">
+                <video autoplay muted loop>
+                    <source src="vid/Video Cyber Green texts.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="hero-content-wrapper">
+                <div class="left">
+                    <h1>Cybersecurity Threats</h1>
+                    <p>Become aware of the latest Cybersecurity threats. Here are some the most common ways that has been used to take advantage of organizations vulnerabilities.</p>
+                </div>
+                <div class="right"></div>
+            </div>
+        </section>
+    </div>
+
+    <div class="basic-content">
+        <h1>Cyber Threat Awareness</h1>
+
+        <section class="basic-section">
+            <h2>Phishing Attacks</h2>
+            <p><strong>What is it?</strong> Phishing is a cyberattack where hackers trick users into giving up personal or financial information through fake emails or websites.</p>
+            <p><strong>Example:</strong> In 2020, Twitter suffered a major phishing attack that compromised employee accounts and led to fake tweets promoting a Bitcoin scam.</p>
+            <p><strong>Weakness:</strong> Employees were not trained to recognize social engineering and clicked on fake login pages.</p>
+            <p><strong>Prevention Tips:</strong></p>
+            <ul>
+                <li>Train users to identify fake emails and suspicious links.</li>
+                <li>Use two-factor authentication (2FA) on all accounts.</li>
+                <li>Monitor employee access and limit admin privileges.</li>
+            </ul>
+        </section>
+
+        <section class="basic-section">
+            <h2>Malware Infections</h2>
+            <p><strong>What is it?</strong> Malware is malicious software designed to damage, disrupt, or gain unauthorized access to systems.</p>
+            <p><strong>Example:</strong> The WannaCry ransomware attack in 2017 affected over 200,000 computers worldwide by encrypting data and demanding ransom payments in Bitcoin.</p>
+            <p><strong>Weakness:</strong> Many systems hadn’t applied a critical Microsoft security patch (EternalBlue vulnerability).</p>
+            <p><strong>Prevention Tips:</strong></p>
+            <ul>
+                <li>Keep systems and software updated with security patches.</li>
+                <li>Use reliable antivirus and anti-malware tools.</li>
+                <li>Regularly back up important data and store it offline.</li>
+            </ul>
+        </section>
+
+        <section class="basic-section">
+            <h2>Denial of Service (DoS) Attacks</h2>
+            <p><strong>What is it?</strong> A DoS attack floods a system or network with traffic to crash or slow it down, making it unavailable to users.</p>
+            <p><strong>Example:</strong> GitHub was hit with a record-breaking 1.35 Tbps DDoS attack in 2018, temporarily knocking the site offline.</p>
+            <p><strong>Weakness:</strong> The attackers exploited vulnerable Memcached servers to amplify traffic.</p>
+            <p><strong>Prevention Tips:</strong></p>
+            <ul>
+                <li>Use cloud-based DDoS protection (e.g., Cloudflare, AWS Shield).</li>
+                <li>Configure firewalls and rate-limiting to block excessive traffic.</li>
+                <li>Monitor network activity for unusual patterns or surges.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <img src="vid/Logo Convwer.gif" alt="Cybersecurity Hub Logo" class="logo-img">
+        <div class="links">
+            <p>© 2025 Cybersecurity Hub. All rights reserved.</p>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="social">
+            <img src="facebook-icon.png" alt="Facebook">
+            <img src="twitter-icon.png" alt="Twitter">
+            <img src="linkedin-icon.png" alt="LinkedIn">
+        </div>
+    </footer>
 </body>
 </html>
