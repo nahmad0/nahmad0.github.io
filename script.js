@@ -11,9 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load news if on news.html
     const newsSection = document.querySelector(".basic-content");
     if (newsSection && document.title.includes("News")) {
-        fetch("https://news-api-proxy-ruby.vercel.app/news")
+        fetch("https://news-api-proxy-six.vercel.app/news")
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 const articles = data.articles;
                 let html = '<h1>Latest Cybersecurity News</h1>';
 
