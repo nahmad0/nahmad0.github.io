@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch("https://news-api-proxy-six.vercel.app/news")
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                console.log(data);  
                 const articles = data.articles;
                 let html = '<h1>Latest Cybersecurity News</h1>';
 
