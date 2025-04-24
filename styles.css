@@ -387,6 +387,13 @@ footer .social img {
     .hero-video-bg video {
         height: auto;
     }
+    .logo-track img {
+        height: 60px;
+      }
+    
+      .logo-scroller {
+        padding: 20px 0;
+      }
 }
 /* Styles for basic content page */
 .basic-content {
@@ -429,3 +436,74 @@ footer .social img {
 .basic-section li {
     margin-bottom: 8px;
 }
+
+/* ================= */
+/* ========== Scrolling for logos styles ========== */
+/* =================== */
+.logo-scroller {
+    background-color: #a10000;
+    padding: 50px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  
+    /* Gradient mask: fade in at 50% from right, fade out at 75% from left */
+    -webkit-mask-image: linear-gradient(to left, 
+        transparent 0%, 
+        black 40%, 
+        black 60%, 
+        transparent 100%);
+    mask-image: linear-gradient(to left, 
+        transparent 0%, 
+        black 60%, 
+        black 40%, 
+        transparent 100%);
+  }
+
+  /* for debugging to see where the mask of fading happens */
+  /* .logo-scroller::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px dashed lime;
+    pointer-events: none;
+  } */
+  
+  
+  .logo-track {
+    display: flex;
+    width: fit-content;
+    animation: scrollLogos 10s linear infinite;
+    gap: 50px;
+    align-items: center;
+  }
+  .logo-track:hover {
+    animation-play-state: paused;
+  }
+  
+  .logo-track img {
+    height: 100px;
+    filter: grayscale(100%) brightness(1.2);
+    transition: transform 0.3s;
+    padding: 0px 40px;
+    
+  }
+  
+  .logo-track img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%) brightness(1.4);
+   
+  }
+  
+  @keyframes scrollLogos {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  
+  
+  
