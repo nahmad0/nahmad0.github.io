@@ -10,6 +10,21 @@ When you try to fetch data directly from `https://newsapi.org` using JavaScript 
 
 - NewsAPI **does not allow client-side browsers** to fetch data directly.
 - This restriction protects the API from misuse and protects users from malicious sites stealing data.
+------------
+🧠 why blocking Summary
+
+|Why They Block It|	Who It Protects|
+|-----------------|----------------|
+|Stops API key theft| You (site owner)|
+|Prevents bots from spamming NewsAPI	| NewsAPI|
+|Blocks malicious sites from tricking users into calling NewsAPI | 	Users|
+|Keeps API usage limited to approved applications	| Everyone|
+
+
+
+So by using a proxy server on Vercel, you control who calls the API (your server), and users just receive safe, already-processed news articles.
+
+Would you like a short animation, visual, or infographic to help explain this on your website too?
 
 ## ✅ Solution: Node.js Proxy on Vercel
 
