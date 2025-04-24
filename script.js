@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load news if on news.html
     const newsSection = document.querySelector(".basic-content");
     if (newsSection && document.title.includes("News")) {
-        fetch("https://newsapi.org/v2/everything?q=cybersecurity&sortBy=publishedAt&pageSize=5&apiKey=76ad70ff99cf4e3a80a7d2fcb45c574a")
+        fetch("https://news-api-proxy-ruby.vercel.app/news")
             .then(res => res.json())
             .then(data => {
                 const articles = data.articles;
