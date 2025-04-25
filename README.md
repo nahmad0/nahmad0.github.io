@@ -62,5 +62,10 @@ fetch("https://news-api-proxy-six.vercel.app/news")
 .then(data => {
  // Update the news section on my  site
 });
+```
+
+
+
+
 
 
