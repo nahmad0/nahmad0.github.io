@@ -72,25 +72,48 @@
       
 
     <!-- Our Service Section -->
-    <section class="service">
-        <h2>OUR SERVICE</h2>
-        <div class="content">
-            <div class="text">
-                <p>We provide resources to learn, practice, and master cybersecurity through guides, tools, and updates.</p>
-                <div class="tabs">
-                    <button>Basics</button>
-                    <button>Threats</button>
-                    <button>Tools</button>
-                    <button>News</button>
-                </div>
-                <p>Each section of our platform is designed to help you grow your cybersecurity knowledge and skills.</p>
-                <p class="tagline">"Learn, Protect, Secure."</p>
-            </div>
-            <div class="image">
-                <img src="service-image.jpg" alt="Service Visual">
-            </div>
-        </div>
-    </section>
+<!-- Cyber Tools Section -->
+ <section class = "service">
+<div class="content">
+    <!-- Left Column: Tabs + Tab Content -->
+    <div class="text">
+      <p>We provide resources to learn, practice, and master cybersecurity through guides, tools, and updates.</p>
+  
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-links active-link" onclick="opentab('Basics', event)">Basics</button>
+        <button class="tab-links" onclick="opentab('Threats', event)">Threats</button>
+        <button class="tab-links" onclick="opentab('Tools', event)">Tools</button>
+        <button class="tab-links" onclick="opentab('News', event)">News</button>
+      </div>
+  
+      <!-- Tab Content Appears Below -->
+      <div id="Basics" class="tab-contents active-tab">
+        <p>Learn how to manage strong passwords, detect phishing, and browse safely.</p>
+      </div>
+  
+      <div id="Threats" class="tab-contents">
+        <p>Understand real-world cyberattacks and how to avoid them.</p>
+      </div>
+  
+      <div id="Tools" class="tab-contents">
+        <p>Explore security tools like Nmap, Wireshark, VPNs, and password managers.</p>
+      </div>
+  
+      <div id="News" class="tab-contents">
+        <p>Stay up to date with the latest cybersecurity threats and breaches.</p>
+      </div>
+  
+      <p class="tagline">"Learn, Protect, Secure."</p>
+    </div>
+
+    <!-- Right Column: Image -->
+    <div class="image">
+      <img src="img/service.jpg" alt="Service Visual">
+    </div>
+  </div>
+</section>
+    
 
     <!-- Cyber Tools Section -->
     <section class="tools">
