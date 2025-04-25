@@ -482,7 +482,7 @@ footer .social img {
   }
   
   .logo-track img {
-    height: 100px;
+    height: 102px;
     filter: grayscale(100%) brightness(1.2);
     transition: transform 0.3s;
     padding: 0px 40px;
