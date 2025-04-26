@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 let html = '<h1>Latest Cybersecurity News</h1>';
 
                 articles.forEach(article => {
+                  // Safely remove the '[+1234 chars]' if it appears in content
+                    const cleanedContent = (article.content || 'No content available.').replace(/\[\+\d+\schars\]/g, '');
+
                     html += `
                         <section class="basic-section">
                             <h2>📰 ${article.title}</h2>
@@ -27,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p><strong>Author:</strong> ${article.author || 'Unknown'}</p>
                             ${article.urlToImage ? `<img src="${article.urlToImage}" alt="${article.title}" style="width:100%; height:auto; max-width:600px; margin: 10px 0;">` : ''}
                             <p>${article.description || 'No description available.'}</p>
-                            <p>${article.content || 'No content available.'}</p>
+                            <p>${cleanedContent || 'No content available.'}</p>
                             <a href="${article.url}" target="_blank">Read more</a>
                         </section>
                     `;
