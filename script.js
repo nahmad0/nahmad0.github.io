@@ -64,7 +64,7 @@ if (form) {
     };
 
     try {
-        const res = await fetch("https://news-api-proxy-glax.vercel.app/api/subscribe", {
+        const res = await fetch("https://news-api-proxy-glax.vercel.app/api/subscribe.js", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
