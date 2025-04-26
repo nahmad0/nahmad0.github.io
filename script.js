@@ -45,17 +45,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Switching between tabs in index.html 
-function opentab(tabname, event) {
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
+const form = document.getElementById("signup-form");
+const emailInput = document.getElementById("email-input");
+const nameInput = document.getElementById("name-input");
+const roleInput = document.getElementById("role-input");
+const messageInput = document.getElementById("message-input");
+const messageBox = document.getElementById("signup-message");
 
-    for (let tablink of tablinks) {
-        tablink.classList.remove("active-link");
-    }
-    for (let tabcontent of tabcontents) {
-        tabcontent.classList.remove("active-tab");
-    }
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
+    const data = {
+      name: nameInput.value,
+      email: emailInput.value,
+      role: roleInput.value,
+      message: messageInput.value
+    };
+
+    try {
+        const res = await fetch("https://news-api-proxy-glax.vercel.app/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      if (res.ok) {
+        messageBox.textContent = result.message;
+        messageBox.style.color = "lightgreen";
+        form.reset();
+      } else {
+        messageBox.textContent = result.error || "Something went wrong.";
+        messageBox.style.color = "orange";
+      }
+    } catch (err) {
+      console.error("Fetch failed:", err);
+      messageBox.textContent = "Server error. Please try again.";
+      messageBox.style.color = "red";
+    }
+  });
 }

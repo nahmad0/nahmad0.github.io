@@ -23,7 +23,7 @@
             <a href="news.html">News</a>
             <a href="#">IP Check</a>
           </nav>
-          <a href="#" class="signup-btn">Sign Up</a>
+          <a href="#signup-section" class="signup-btn">Sign Up</a>
         </div>
       </header>
       
@@ -48,6 +48,8 @@
         </section>
     </div>
 
+
+    
     <!-- Warning Section -->
     <section class="logo-scroller">
         <div class="logo-track">
@@ -147,11 +149,29 @@
     </div>
   
     <p class="callout-text">Stay informed. Be one step ahead of cyber threats. Subscribe below or sign up on top right.</p>
-    <button class="signup-btn">Subscribe Now</button>
+    <p class="callout-text">We respect your privacy. Your email will not be shared. Please enter your email below.</p>
   </section>
   
-
-
+  <section class="signup-section" id="signup-section">
+    <h2>📧 Join the Cybersecurity Hub</h2>
+    <form id="signup-form"> 
+      <!--  -->
+      <input type="text" id="name-input" placeholder="Your Full Name" required>
+      <input type="email" id="email-input" placeholder="Email Address" required>
+      <select id="role-input" required>
+        <option disabled selected>Select your role</option>
+        <option value="Student">Student</option>
+        <option value="Business">Small Business Owner</option>
+        <option value="Professional">IT Professional</option>
+      </select>
+      <textarea id="message-input" placeholder="Why are you joining?"></textarea>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p id="signup-message"></p>
+    
+    <p id="signup-message"></p>
+  </section>
+  
     <!-- Footer -->
     <footer>
         <img src="vid/Logo Convwer.gif" alt="Cybersecurity Hub Logo" class="logo-img">
