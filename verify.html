@@ -41,7 +41,7 @@
       document.getElementById('status').className += ' error';
     } else {
       // Call backend API to confirm token
-      fetch(`https://your-vercel-backend-url/api/verify/confirm?token=${token}`)
+      fetch(`https://news-api-proxy-glax.vercel.app//api/verify/confirm?token=${token}`)
         .then(res => {
           if (!res.ok) throw new Error('Invalid or expired token');
           return res.text();
