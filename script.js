@@ -45,15 +45,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
-
-// Switching between tabs in index.html 
+// Handle form submission and verification
+// Check if the form and verification section exist before adding event listeners
 const form = document.getElementById("signup-form");
 const emailInput = document.getElementById("email-input");
 const nameInput = document.getElementById("name-input");
 const roleInput = document.getElementById("role-input");
 const messageInput = document.getElementById("message-input");
 const messageBox = document.getElementById("signup-message");
+
+const verifySection = document.getElementById("verify-section");
+const verifyInput = document.getElementById("verification-code");
+const verifyButton = document.getElementById("verify-button");
+const verifyMessage = document.getElementById("verify-message");
 
 if (form) {
   form.addEventListener("submit", async (e) => {
@@ -67,19 +71,24 @@ if (form) {
     };
 
     try {
-        const res = await fetch("https://news-api-proxy-glax.vercel.app/api/subscribe.js", {
+      const res = await fetch("https://news-api-proxy-glax.vercel.app/api/subscribe", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
       });
 
       const result = await res.json();
       if (res.ok) {
+        // Save values in localStorage for verify step
+        localStorage.setItem("verificationEmail", data.email);
+        localStorage.setItem("verificationName", data.name);
+        localStorage.setItem("verificationRole", data.role);
+        localStorage.setItem("verificationMessage", data.message);
+        localStorage.setItem("verificationCodeTime", Date.now().toString());
+
         messageBox.textContent = result.message;
         messageBox.style.color = "lightgreen";
-        form.reset();
+        verifySection.style.display = "block";
       } else {
         messageBox.textContent = result.error || "Something went wrong.";
         messageBox.style.color = "orange";
@@ -91,3 +100,52 @@ if (form) {
     }
   });
 }
+
+if (verifyButton) {
+  verifyButton.addEventListener("click", async () => {
+    const code = verifyInput.value;
+
+    const email = localStorage.getItem("verificationEmail");
+    const name = localStorage.getItem("verificationName");
+    const role = localStorage.getItem("verificationRole");
+    const message = localStorage.getItem("verificationMessage");
+    const codeTime = parseInt(localStorage.getItem("verificationCodeTime"));
+    const now = Date.now();
+    const diffMinutes = (now - codeTime) / (1000 * 60);
+
+    // ❌ Code expired
+    if (diffMinutes > 10) {
+      verifyMessage.textContent = "Code has expired. Please sign up again.";
+      verifyMessage.style.color = "red";
+      localStorage.clear(); // optional full clear
+      return;
+    }
+
+    try {
+      const res = await fetch("https://news-api-proxy-glax.vercel.app/api/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, code, name, role, message })
+      });
+
+      const result = await res.json();
+      if (res.ok) {
+        verifyMessage.textContent = result.message;
+        verifyMessage.style.color = "lightgreen";
+        form.reset();
+        verifySection.style.display = "none";
+
+        // Clear localStorage after success
+        localStorage.clear();
+      } else {
+        verifyMessage.textContent = result.error || "Invalid code.";
+        verifyMessage.style.color = "orange";
+      }
+    } catch (err) {
+      console.error("Verification failed:", err);
+      verifyMessage.textContent = "Server error. Try again.";
+      verifyMessage.style.color = "red";
+    }
+  });
+}
+
