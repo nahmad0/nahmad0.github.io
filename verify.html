@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email Verification - Cybersecurity Hub</title>
+  <style>
+    body {
+      background-color: #0d1a26;
+      color: #e0e0e0;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #9fef00;
+    }
+    .status {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+    .success {
+      color: #00ff7f;
+    }
+    .error {
+      color: #ff6b6b;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔐 Email Verification</h1>
+  <div id="status" class="status">Verifying your email...</div>
+
+  <script>
+    // Extract token from URL
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+
+    if (!token) {
+      document.getElementById('status').innerHTML = '❌ No token provided.';
+      document.getElementById('status').className += ' error';
+    } else {
+      // Call backend API to confirm token
+      fetch(`https://your-vercel-backend-url/api/verify/confirm?token=${token}`)
+        .then(res => {
+          if (!res.ok) throw new Error('Invalid or expired token');
+          return res.text();
+        })
+        .then(msg => {
+          document.getElementById('status').innerHTML = `✅ ${msg}`;
+          document.getElementById('status').className += ' success';
+        })
+        .catch(err => {
+          document.getElementById('status').innerHTML = `❌ ${err.message}`;
+          document.getElementById('status').className += ' error';
+        });
+    }
+  </script>
+</body>
+</html>
