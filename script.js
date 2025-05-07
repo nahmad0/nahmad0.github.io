@@ -149,3 +149,25 @@ if (verifyButton) {
   });
 }
 
+
+// Define the function that switches between tabs
+function opentab(tabName, event) {
+  // Get all elements with class "tab-contents" and hide them
+  const tabContents = document.querySelectorAll(".tab-contents");
+  tabContents.forEach(content => {
+      content.classList.remove("active-tab"); // Remove active class to hide
+  });
+
+  // Get all elements with class "tab-links" and remove the active highlight
+  const tabLinks = document.querySelectorAll(".tab-links");
+  tabLinks.forEach(link => {
+      link.classList.remove("active-link"); // Remove active class from all buttons
+  });
+
+  // Show the selected tab content by adding the active class
+  document.getElementById(tabName).classList.add("active-tab");
+
+  // Highlight the clicked button (add the active class)
+  event.currentTarget.classList.add("active-link");
+}
+

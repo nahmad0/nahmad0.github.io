@@ -390,6 +390,122 @@ footer .social img {
         flex-direction: column;
         align-items: center;
     }
+    @media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+
+    .nav-container nav {
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+        padding: 0;
+    }
+
+    .nav-container nav.active {
+        display: flex;
+        max-height: 500px;
+        opacity: 1;
+        padding: 10px 0;
+        visibility: visible;
+    }
+
+    .nav-container nav a {
+        padding: 10px 0;
+        width: 100%;
+        border-bottom: 1px solid #2c3e50;
+        margin: 0;
+    }
+
+    .signup-btn {
+        display: none;
+        width: 100%;
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    .nav-container nav.active + .signup-btn {
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero .left,
+    .hero .right,
+    .service .text,
+    .service .image,
+    .tools .card {
+        width: 100%;
+    }
+
+    .service .content {
+        flex-direction: column; /* 👈 NEW */
+        gap: 20px;             /* 👈 NEW */
+    }
+
+    .service .image,
+    .service .text {
+        width: 100%; /* 👈 Ensure both are full-width */
+    }
+
+    .tools .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service .content {
+        flex-direction: column; /* 👈 Stack image and text vertically */
+        gap: 20px; /* 👈 Reduce gap for mobile */
+    }
+
+    .service .image,
+    .service .text {
+        width: 100%; /* 👈 Make sure both take full width on mobile */
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .video-hero-container {
+        height: auto;
+    }
+
+    .hero-video-bg video {
+        height: auto;
+    }
+
+    .logo-track img {
+        height: 60px;
+    }
+
+    .logo-scroller {
+        padding: 20px 0;
+    }
+}
+
 
     footer {
         flex-direction: column;

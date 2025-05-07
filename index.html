@@ -1,198 +1,207 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Hub</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cybersecurity Hub</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <button class="hamburger">&#9776;</button>
-        <img src="vid/Logo Convwer.gif" alt="Logo" class="logo-img">
-        
-        <div class="nav-container">
-          <nav>
-            <a href="#basics.html">Home</a>
-            <a href="basics.html">Basics</a>
-            <a href="Threats.html">Threats</a>
-            <a href="tools.html">Tools</a>
-            <a href="news.html">News</a>
-            <a href="#">IP Check</a>
+        <header>
+            <button class="hamburger">&#9776;</button>
+            <img src="vid/Logo Convwer.gif" alt="Logo" class="logo-img">
+            <div class="nav-container">
+              <nav>
+                <a href="#basics.html">Home</a>
+                <a href="basics.html">Basics</a>
+                <a href="Threats.html">Threats</a>
+                <a href="tools.html">Tools</a>
+                <a href="news.html">News</a>
+                <a href="#">IP Check</a>
           </nav>
-          <a href="#signup-section" class="signup-btn">Sign Up</a>
+              <a href="#signup-section" class="signup-btn">Sign Up</a>
         </div>
       </header>
-      
-    
-
-    <!-- Hero Section -->
-    <!-- Hero Section -->
-    <div class="video-hero-container">
-        <section class="hero">
-            <div class="hero-video-bg">
-                <video autoplay muted loop playsinline>
-                    <source src="vid/5377684-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        <!-- Hero Section -->
+        <!-- Hero Section -->
+        <div class="video-hero-container">
+            <section class="hero">
+                <div class="hero-video-bg">
+                    <video autoplay muted loop playsinline>
+                        <source src="vid/5377684-uhd_3840_2160_25fps.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="hero-content-wrapper">
-                <div class="left">
-                    <h1>Welcome to Cybersecurity Hub</h1>
-                    <p>Learn how to protect yourself...</p>
+                <div class="hero-content-wrapper">
+                    <div class="left">
+                        <h1>Welcome to Cybersecurity Hub</h1>
+                        <p>Learn how to protect yourself...</p>
                 </div>
-                <div class="right"></div>
+                    <div class="right"></div>
             </div>
         </section>
     </div>
-
-
-    
-    <!-- Warning Section -->
-    <section class="logo-scroller">
-        <div class="logo-track">
-          <img src="img/logo/Norton.png" alt="Norton">
-          <img src="img/logo/macfee.png" alt="McAfee">
-          <img src="img/logo/Bitfender.png" alt="Bitdefender">
-          <img src="img/logo/OWASP.png" alt="OWASP">
-          <img src="img/logo/WireShark .png" alt="Wireshark">
-          <img src="img/logo/kali.png" alt="Kali Linux">
-          <img src="img/logo/cloud fare.png" alt="Cloudflare">
-          <!-- Repeat again for smooth loop -->
-          <img src="img/logo/Norton.png" alt="Norton">
-          <img src="img/logo/macfee.png" alt="McAfee">
-          <img src="img/logo/Bitfender.png" alt="Bitdefender">
-          <img src="img/logo/OWASP.png" alt="OWASP">
-          <img src="img/logo/WireShark .png" alt="Wireshark">
-          <img src="img/logo/kali.png" alt="Kali Linux">
-          <img src="img/logo/cloud fare.png" alt="Cloudflare">
-
+        <!-- Warning Section -->
+        <section class="logo-scroller">
+            <div class="logo-track">
+              <img src="img/logo/Norton.png" alt="Norton">
+              <img src="img/logo/macfee.png" alt="McAfee">
+              <img src="img/logo/Bitfender.png" alt="Bitdefender">
+              <img src="img/logo/OWASP.png" alt="OWASP">
+              <img src="img/logo/WireShark .png" alt="Wireshark">
+              <img src="img/logo/kali.png" alt="Kali Linux">
+              <img src="img/logo/cloud fare.png" alt="Cloudflare">
+              <!-- Repeat again for smooth loop -->
+              <img src="img/logo/Norton.png" alt="Norton">
+              <img src="img/logo/macfee.png" alt="McAfee">
+              <img src="img/logo/Bitfender.png" alt="Bitdefender">
+              <img src="img/logo/OWASP.png" alt="OWASP">
+              <img src="img/logo/WireShark .png" alt="Wireshark">
+              <img src="img/logo/kali.png" alt="Kali Linux">
+              <img src="img/logo/cloud fare.png" alt="Cloudflare">
         </div>
       </section>
-      
-
-    <!-- Our Service Section -->
-<!-- Cyber Tools Section -->
- <section class = "service">
-<div class="content">
-    <!-- Left Column: Tabs + Tab Content -->
-    <div class="text">
-      <p>We provide resources to learn, practice, and master cybersecurity through guides, tools, and updates.</p>
-  
-      <!-- Tabs -->
-      <div class="tabs">
-        <button class="tab-links active-link" onclick="opentab('Basics', event)">Basics</button>
-        <button class="tab-links" onclick="opentab('Threats', event)">Threats</button>
-        <button class="tab-links" onclick="opentab('Tools', event)">Tools</button>
-        <button class="tab-links" onclick="opentab('News', event)">News</button>
-      </div>
-  
-      <!-- Tab Content Appears Below -->
-      <div id="Basics" class="tab-contents active-tab">
-        <p>Learn how to manage strong passwords, detect phishing, and browse safely.</p>
-      </div>
-  
-      <div id="Threats" class="tab-contents">
-        <p>Understand real-world cyberattacks and how to avoid them.</p>
-      </div>
-  
-      <div id="Tools" class="tab-contents">
-        <p>Explore security tools like Nmap, Wireshark, VPNs, and password managers.</p>
-      </div>
-  
-      <div id="News" class="tab-contents">
-        <p>Stay up to date with the latest cybersecurity threats and breaches.</p>
-      </div>
-  
-      <p class="tagline">"Learn, Protect, Secure."</p>
+        <!-- Our Service Section -->
+    <!-- Cyber Tools Section -->
+     <section class = "service">
+      <div class="content">
+        <!-- Left Column: Tabs + Tab Content -->
+        <div class="text">
+          <p>We provide resources to learn, practice, and master cybersecurity through guides, tools, and updates.</p>
+          <div class="tabs">
+            <button class="tab-links active-link" onclick="opentab('Basics', event)">Basics</button>
+            <button class="tab-links" onclick="opentab('Threats', event)">Threats</button>
+            <button class="tab-links" onclick="opentab('Tools', event)">Tools</button>
+            <button class="tab-links" onclick="opentab('News', event)">News</button>
     </div>
-
-    <!-- Right Column: Image -->
+        <!-- Tab Content Appears Below -->
+        <div id="Basics" class="tab-contents active-tab">
+            <h3>🔐 Cybersecurity Basics</h3>
+            <p>Learn the foundational principles of cybersecurity to protect your personal and business data. We cover:</p>
+            <ul>
+                <li>✅ <strong>Password Management:</strong> How to create strong, unique passwords and use password managers securely.</li>
+                <li>✅ <strong>Phishing Prevention:</strong> Spotting fake emails, avoiding scams, and best practices to stay alert online.</li>
+                <li>✅ <strong>Safe Browsing:</strong> Understand HTTPS, VPNs, and how to avoid malicious websites.</li>
+                <li>✅ <strong>Two-Factor Authentication:</strong> Add an extra layer of security to your accounts.</li>
+        </ul>
+            <p>This tab is your starting point to build strong, secure digital habits.</p>
+    </div>
+        <div id="Threats" class="tab-contents">
+            <h3>⚠️ Threat Awareness</h3>
+            <p>Stay informed about the latest cyber threats that impact individuals and organizations. In this section, you’ll explore:</p>
+            <ul>
+                <li>🚨 <strong>Phishing Attacks:</strong> How attackers trick users and how businesses like Twitter got hacked.</li>
+                <li>🚨 <strong>Malware & Ransomware:</strong> What malware is, famous attacks like WannaCry, and how to prevent infections.</li>
+                <li>🚨 <strong>Denial of Service (DoS):</strong> How hackers overwhelm systems and how big companies fight back.</li>
+                <li>🚨 <strong>Common Weaknesses:</strong> Understand how unpatched systems and human error open the door to attackers.</li>
+        </ul>
+            <p>This tab will help you recognize risks early and defend effectively.</p>
+    </div>
+        <div id="Tools" class="tab-contents">
+            <h3>🛠️ Tools & Resources</h3>
+            <p>Discover powerful tools to enhance your cybersecurity posture and keep your systems safe. We introduce:</p>
+            <ul>
+                <li>🔎 <strong>Nmap & Metasploit:</strong> Essential tools for scanning networks and testing vulnerabilities.</li>
+                <li>🔒 <strong>Wireshark & Snort:</strong> Tools for analyzing network traffic and detecting intrusions.</li>
+                <li>🔑 <strong>NordVPN & Bitwarden:</strong> Trusted apps to secure your online activity and manage passwords.</li>
+                <li>📚 <strong>TryHackMe & Hack The Box:</strong> Platforms to practice real-world cybersecurity skills hands-on.</li>
+        </ul>
+            <p>This tab equips you with the resources to act, not just learn.</p>
+    </div>
+        <div id="News" class="tab-contents">
+            <h3>📰 Cybersecurity News</h3>
+            <p>Stay up-to-date with the latest global cybersecurity incidents, breaches, and developments. Our news section provides:</p>
+            <ul>
+                <li>📢 <strong>Breaking News:</strong> Immediate alerts on new hacks, scams, and security issues worldwide.</li>
+                <li>🔬 <strong>Expert Analysis:</strong> Insights into how breaches happened and what can be learned from them.</li>
+                <li>📈 <strong>Trends & Reports:</strong> The newest tools, patches, and technology developments in the security world.</li>
+                <li>✍️ <strong>Prevention Tips:</strong> What steps you should take to avoid similar risks.</li>
+        </ul>
+            <p>Stay informed and stay one step ahead of the hackers!</p>
+    </div>
+        <p class="tagline">"Learn, Protect, Secure."</p>
+    </div>
+    
+      <!-- Right Column: Image -->
     <div class="image">
+
+
       <img src="img/service.jpg" alt="Service Visual">
     </div>
   </div>
 </section>
-    
-
-    <!-- Cyber Tools Section -->
-<!-- Stay Updated Section -->
-<!-- Newsletter Icons + CTA Section -->
-<!-- Steps to Join Newsletter -->
-<section class="newsletter-steps">
-    <h2>🛡️ How to Join Our Cybersecurity Newsletter</h2>
-    <p>Get the latest threats, tips, and tools—right in your inbox.</p>
-  
-    <div class="steps-container" id="signup-section">
-      <div class="step">
-        <div class="circle">1</div>
-        <p>Sign Up</p>
+        <!-- Cyber Tools Section -->
+    <!-- Stay Updated Section -->
+    <!-- Newsletter Icons + CTA Section -->
+    <!-- Steps to Join Newsletter -->
+    <section class="newsletter-steps">
+        <h2>🛡️ How to Join Our Cybersecurity Newsletter</h2>
+        <p>Get the latest threats, tips, and tools—right in your inbox.</p>
+        <div class="steps-container" id="signup-section">
+          <div class="step">
+            <div class="circle">1</div>
+            <p>Sign Up</p>
       </div>
-      <div class="step">
-        <div class="circle">2</div>
-        <p>Verify Email</p>
+          <div class="step">
+            <div class="circle">2</div>
+            <p>Verify Email</p>
       </div>
-      <div class="step">
-        <div class="circle">3</div>
-        <p>Give us your Email</p>
+          <div class="step">
+            <div class="circle">3</div>
+            <p>Give us your Email</p>
       </div>
-      <div class="step">
-        <div class="circle">4</div>
-        <p>Get Updates</p>
+          <div class="step">
+            <div class="circle">4</div>
+            <p>Get Updates</p>
       </div>
-      <div class="step">
-        <div class="circle">5</div>
-        <p>Stay Secure!</p>
+          <div class="step">
+            <div class="circle">5</div>
+            <p>Stay Secure!</p>
       </div>
     </div>
-  
-    <p class="callout-text">Stay informed. Be one step ahead of cyber threats. Subscribe below or sign up on top right.</p>
-    <p class="callout-text">We respect your privacy. Your email will not be shared. Please enter your email below.</p>
+        <p class="callout-text">Stay informed. Be one step ahead of cyber threats. Subscribe below or sign up on top right.</p>
+        <p class="callout-text">We respect your privacy. Your email will not be shared. Please enter your email below.</p>
   </section>
-  
-  <section class="signup-section" >
-    <h2>📧 Join the Cybersecurity Hub</h2>
-    <form id="signup-form"> 
-      <!--  -->
-      <input type="text" id="name-input" placeholder="Your Full Name" required>
-      <input type="email" id="email-input" placeholder="Email Address" required>
-      <select id="role-input" required>
-        <option disabled selected>Select your role</option>
-        <option value="Student">Student</option>
-        <option value="Business">Small Business Owner</option>
-        <option value="Professional">IT Professional</option>
+      <section class="signup-section" >
+        <h2>📧 Join the Cybersecurity Hub</h2>
+        <form id="signup-form"> 
+          <!--  -->
+          <input type="text" id="name-input" placeholder="Your Full Name" required>
+          <input type="email" id="email-input" placeholder="Email Address" required>
+          <select id="role-input" required>
+            <option disabled selected>Select your role</option>
+            <option value="Student">Student</option>
+            <option value="Business">Small Business Owner</option>
+            <option value="Professional">IT Professional</option>
       </select>
-      <textarea id="message-input" placeholder="Why are you joining?"></textarea>
-      <button type="submit">Subscribe</button>
+          <textarea id="message-input" placeholder="Why are you joining?"></textarea>
+          <button type="submit">Subscribe</button>
     </form>
-    <p id="signup-message"></p>
-
-    <!-- Hidden Verification Step -->
-    <div id="verify-section" style="display:none;">
-      <h3>🔐 Email Verification</h3>
-      <p>Please check your inbox for a 6-digit verification code and enter it below:</p>
-      <input type="text" id="verification-code" placeholder="Enter 6-digit code" maxlength="6">
-      <button type="button" id="verify-button">Verify Code</button>
-      <p id="verify-message"></p>
+        <p id="signup-message"></p>
+        <!-- Hidden Verification Step -->
+        <div id="verify-section" style="display:none;">
+          <h3>🔐 Email Verification</h3>
+          <p>Please check your inbox for a 6-digit verification code and enter it below:</p>
+          <input type="text" id="verification-code" placeholder="Enter 6-digit code" maxlength="6">
+          <button type="button" id="verify-button">Verify Code</button>
+          <p id="verify-message"></p>
     </div>
-    
-    <p id="signup-message"></p>
+        <p id="signup-message"></p>
   </section>
-  
-    <!-- Footer -->
-    <footer>
-        <img src="vid/Logo Convwer.gif" alt="Cybersecurity Hub Logo" class="logo-img">
-        <div class="links">
-            <p>© 2025 Cybersecurity Hub. All rights reserved.</p>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+        <!-- Footer -->
+        <footer>
+            <img src="vid/Logo Convwer.gif" alt="Cybersecurity Hub Logo" class="logo-img">
+            <div class="links">
+                <p>© 2025 Cybersecurity Hub. All rights reserved.</p>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
         </div>
-        <div class="social">
-            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            <div class="social">
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
         </div>
     </footer>
 </body>
