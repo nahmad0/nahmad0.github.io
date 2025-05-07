@@ -734,6 +734,58 @@ footer .social img {
 
 
 
+/* IP check */
+
+.ip-check-section {
+    padding: 50px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#ip-check-form input {
+    padding: 12px;
+    width: 70%;
+    max-width: 400px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#ip-check-form button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #9fef00;
+    color: #0d1a26;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#ip-check-form button:hover {
+    background-color: #7cc900;
+}
+
+.ip-result ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.ip-result li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #b0b0b0;
+}
+
+.hidden {
+    display: none;
+}
+
+
 
 
 

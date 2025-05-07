@@ -171,3 +171,49 @@ function opentab(tabName, event) {
   event.currentTarget.classList.add("active-link");
 }
 
+
+//IP chekcer
+
+
+document.getElementById('ip-check-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const ip = document.getElementById('ip-input').value.trim();
+  const messageBox = document.getElementById('ip-check-message');
+  const resultBox = document.getElementById('ip-result');
+
+  // Reset UI
+  messageBox.textContent = '';
+  resultBox.classList.add('hidden');
+
+  if (!ip) {
+      messageBox.textContent = '⚠️ Please enter a valid IP address.';
+      return;
+  }
+
+  messageBox.textContent = '🔄 Checking...';
+
+  try {
+      const res = await fetch(`https://ipapi.co/${ip}/json/`);
+      const data = await res.json();
+
+      if (data.error) {
+          messageBox.textContent = `❌ Error: ${data.reason}`;
+          return;
+      }
+
+      // Fill in results
+      document.getElementById('result-ip').textContent = data.ip || 'N/A';
+      document.getElementById('result-country').textContent = data.country_name || 'N/A';
+      document.getElementById('result-region').textContent = data.region || 'N/A';
+      document.getElementById('result-city').textContent = data.city || 'N/A';
+      document.getElementById('result-isp').textContent = data.org || 'N/A';
+      document.getElementById('result-reputation').textContent = 'Basic lookup - reputation not checked yet';
+
+      resultBox.classList.remove('hidden');
+      messageBox.textContent = '';
+  } catch (err) {
+      console.error(err);
+      messageBox.textContent = '❌ Failed to fetch IP data. Please try again.';
+  }
+});
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Check - Cybersecurity Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <button class="hamburger">&#9776;</button>
+        <img src="vid/Logo_Convwer.gif" alt="Logo" class="logo-img">
+        <div class="nav-container">
+          <nav>
+            <a href="#basics.html">Home</a>
+            <a href="basics.html">Basics</a>
+            <a href="Threats.html">Threats</a>
+            <a href="tools.html">Tools</a>
+            <a href="news.html">News</a>
+            <a href="ipcheck.html">IP Check</a>
+      </nav>
+          <a href="#signup-section" class="signup-btn">Sign Up</a>
+    </div>
+  </header>
+
+<main class="ip-check-section">
+    <div class="container">
+        <h1>🔎 IP Address Checker</h1>
+        <p>Enter any IP address below to check its location and reputation status.</p>
+        
+        <!-- IP input form -->
+        <form id="ip-check-form">
+            <input type="text" id="ip-input" placeholder="Enter IP address" required>
+            <button type="submit">Check IP</button>
+        </form>
+
+        <!-- Message box for errors/loading -->
+        <p id="ip-check-message"></p>
+
+        <!-- Result display -->
+        <div id="ip-result" class="ip-result hidden">
+            <h2>Result:</h2>
+            <ul>
+                <li><strong>IP Address:</strong> <span id="result-ip"></span></li>
+                <li><strong>Country:</strong> <span id="result-country"></span></li>
+                <li><strong>Region:</strong> <span id="result-region"></span></li>
+                <li><strong>City:</strong> <span id="result-city"></span></li>
+                <li><strong>ISP:</strong> <span id="result-isp"></span></li>
+                <li><strong>Reputation:</strong> <span id="result-reputation"></span></li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <!-- Your existing footer here -->
+</footer>
+
+</body>
+</html>
