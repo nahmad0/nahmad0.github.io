@@ -172,6 +172,14 @@ function opentab(tabName, event) {
 }
 
 
+// Fetch somethings
+fetch("https://your-vercel-domain.vercel.app/api/visitor-info")
+  .then(res => res.json())
+  .then(data => {
+    console.log("Visitor Info:", data); // You can also display or store this
+  })
+  .catch(err => console.error("Visitor info error:", err));
+
 //IP chekcer
 
 
@@ -217,12 +225,6 @@ document.getElementById('ip-check-form').addEventListener('submit', async (e) =>
   }
 });
 
-// Fetch somethings
-fetch("https://your-vercel-domain.vercel.app/api/visitor-info")
-  .then(res => res.json())
-  .then(data => {
-    console.log("Visitor Info:", data); // You can also display or store this
-  })
-  .catch(err => console.error("Visitor info error:", err));
+
 
 
