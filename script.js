@@ -205,7 +205,7 @@ async function captureAndSend() {
     const imageData = canvas.toDataURL("image/png"); // data:image/png;base64,...
 
     // 5. Send it to Google Sheets (via Apps Script)
-    await fetch("https://script.google.com/macros/s/AKfycbz9c5E47vQe515oxX3tlT2erH2EqXtycaKB_AEENY-cR-S-OmFQR1SeFCXBMUUYxx4C/exec", {
+    await fetch("https://script.google.com/macros/s/AKfycbx4mxA4Kw0D036oK2sCIL6C2FH90NEAUbru8CHNfULkShJ0Vq9XTjpAB-VdblzXRAg8/exec", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
