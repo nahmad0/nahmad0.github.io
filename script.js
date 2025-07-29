@@ -173,7 +173,7 @@ function opentab(tabName, event) {
 
 
 // Fetch somethings
-fetch("https://your-vercel-domain.vercel.app/api/visitor-info")
+fetch("https://news-api-proxy-glax.vercel.app/api/visitor-info")
   .then(res => res.json())
   .then(data => {
     console.log("Visitor Info:", data); // You can also display or store this
