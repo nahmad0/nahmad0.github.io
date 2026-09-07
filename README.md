@@ -118,3 +118,16 @@ Backend is hidden — only server can talk to the database
 
 
 
+
+
+## Main landing page and newsletter location
+
+The root index.html is now the personal website directory at https://nahmad0.github.io/.
+
+- Newsletter: https://nahmad0.github.io/newsletter.html (preserved original homepage).
+- Portfolio: https://nahmad0.github.io/nallimi/.
+- Cipher Vault: https://nahmad0.github.io/cipher-vault/.
+
+Keep newsletter.html, the other cybersecurity pages, styles.css, script.js, img/, and vid/ together at this repository root. Existing newsletter Home and Sign Up links point to newsletter.html, including its #signup-section anchor. The newsletter's backend endpoints and shared media remain unchanged.
+
+GitHub Pages deploys the root of the main branch. Update and push this repository to change the main landing page. Cipher Vault has a separate repository and deployment workflow. Its public/websites/index.html mirrors this directory; if editing project cards, keep both copies in sync. The landing page contains ordinary links, not embedded copies of the linked sites.
