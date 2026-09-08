@@ -1,0 +1,12 @@
+4
+Alex
+Blair
+Casey
+Drew
+2
+Alex*Blair
+Blair*Casey
+3
+Alex*Casey
+Alex*Drew
+Alex*Unknown
