@@ -2,6 +2,7 @@
 
 These projects extend the existing Nabil Allimi website directory. The homepage format and the existing newsletter, personal portfolio, and Cipher Vault pages are preserved.
 
+- [Ridgebreaker: Wild Ascent](https://nahmad0.github.io/projects/ridgebreaker/) — [source](./ridgebreaker/source/)
 - [Wordle Pattern Analyzer](https://nahmad0.github.io/projects/wordle/) — [source](./wordle/)
 - [Pathfinding Playground](https://nahmad0.github.io/projects/pathfinding/) — [source](./pathfinding/)
 - [CSV Heatmap](https://nahmad0.github.io/projects/heatmap/) — [source](./heatmap/)

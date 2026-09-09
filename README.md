@@ -125,7 +125,8 @@ Backend is hidden — only server can talk to the database
 The root index.html is now the personal website directory at https://nahmad0.github.io/.
 
 - Newsletter: https://nahmad0.github.io/newsletter.html (preserved original homepage).
-- Portfolio: https://nahmad0.github.io/nallimi/.
+- Ridgebreaker: Wild Ascent: https://nahmad0.github.io/projects/ridgebreaker/ (source in projects/ridgebreaker/source/).
+- The personal portfolio is no longer listed on the homepage; its existing site remains unchanged.
 - Cipher Vault: https://nahmad0.github.io/cipher-vault/.
 
 Keep newsletter.html, the other cybersecurity pages, styles.css, script.js, img/, and vid/ together at this repository root. Existing newsletter Home and Sign Up links point to newsletter.html, including its #signup-section anchor. The newsletter's backend endpoints and shared media remain unchanged.
