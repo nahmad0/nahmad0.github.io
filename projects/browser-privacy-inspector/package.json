@@ -1,0 +1,13 @@
+{
+  "name": "browser-privacy-inspector",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Consent-based browser privacy education tool",
+  "scripts": {
+    "check": "node --check script.js",
+    "test": "node tests/smoke.cjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0"
+  }
+}
