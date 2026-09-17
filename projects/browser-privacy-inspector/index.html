@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A transparent, local-only demonstration of information browsers expose to websites.">
+  <meta name="color-scheme" content="dark light">
+  <title>Browser Privacy Inspector</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Browser Privacy Inspector home">
+      <span class="brand-mark" aria-hidden="true">⌁</span>
+      <span>Browser Privacy Inspector</span>
+    </a>
+    <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch to light theme" title="Toggle theme">
+      <span aria-hidden="true">☼</span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="eyebrow"><span class="status-dot"></span> Local-only privacy lab</div>
+      <h1 id="hero-title">See what your browser says <span>before you say anything.</span></h1>
+      <p class="hero-copy">Websites can learn more about your browser and device than you may realize. This tool shows information your browser voluntarily exposes.</p>
+      <div class="privacy-promise">
+        <span aria-hidden="true">✓</span>
+        <strong>Your scan results stay on this device and are not uploaded anywhere.</strong>
+      </div>
+      <button id="run-scan" class="primary-button" type="button">
+        <span aria-hidden="true">▶</span> Run Privacy Scan
+      </button>
+      <p class="consent-note">Nothing is inspected until you choose to run the scan. No sensitive permission prompts will appear.</p>
+      <div class="scope-grid" aria-label="Privacy boundaries">
+        <article><span aria-hidden="true">01</span><h2>Consent first</h2><p>The scan starts only when you click.</p></article>
+        <article><span aria-hidden="true">02</span><h2>Browser APIs only</h2><p>No passwords, files, history, or clipboard data.</p></article>
+        <article><span aria-hidden="true">03</span><h2>Zero uploads</h2><p>All analysis happens in this page.</p></article>
+      </div>
+    </section>
+
+    <section id="dashboard" class="dashboard" hidden aria-labelledby="dashboard-title">
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">Scan complete · <span id="scan-time"></span></p>
+          <h1 id="dashboard-title">Your browser exposure report</h1>
+          <p class="subtle">This is an educational snapshot, not a guarantee of anonymity or security.</p>
+        </div>
+        <div class="actions">
+          <button id="scan-again" class="secondary-button" type="button">↻ Run Scan Again</button>
+          <button id="clear-results" class="ghost-button" type="button">Clear Results</button>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <article class="score-panel">
+          <div id="score-ring" class="score-ring" role="img" aria-label="Privacy exposure score">
+            <div><strong id="score-value">—</strong><span>/ 100</span></div>
+          </div>
+          <div>
+            <p class="panel-label">Exposure score</p>
+            <h2 id="score-label">Calculating…</h2>
+            <p id="score-description" class="subtle"></p>
+          </div>
+        </article>
+        <article class="summary-stat"><span class="stat-icon low">L</span><div><strong id="low-count">0</strong><span>Low-risk signals</span></div></article>
+        <article class="summary-stat"><span class="stat-icon medium">M</span><div><strong id="medium-count">0</strong><span>Medium-risk signals</span></div></article>
+        <article class="summary-stat"><span class="stat-icon high">H</span><div><strong id="high-count">0</strong><span>High-risk signals</span></div></article>
+      </div>
+
+      <nav id="section-nav" class="section-nav" aria-label="Report sections"></nav>
+      <div id="results" class="results" aria-live="polite"></div>
+
+      <aside class="fingerprint-explainer">
+        <div class="fingerprint-visual" aria-hidden="true"><span>⌁</span></div>
+        <div>
+          <p class="eyebrow">Why combinations matter</p>
+          <h2>Browser fingerprinting</h2>
+          <p>A screen size or timezone alone is usually not identifying. Combined with many other signals—such as graphics hardware, language, and browser capabilities—they can form a pattern that is more distinctive. Trackers may use that pattern to recognize a browser even without cookies.</p>
+          <p><strong>This demo does not create or store a fingerprint.</strong> It shows individual values only so you can understand the ingredients.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for privacy education. No analytics. No external requests. No data collection.</p>
+    <a href="https://github.com/" rel="noopener noreferrer">Learn about deploying on GitHub Pages</a>
+  </footer>
+
+  <noscript><p class="noscript">JavaScript is required to run this local browser API demonstration.</p></noscript>
+  <script src="script.js" defer></script>
+</body>
+</html>
