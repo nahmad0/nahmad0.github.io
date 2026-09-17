@@ -34,6 +34,18 @@ The scan covers `navigator` browser and device properties, `screen` and viewport
 
 Some APIs are deliberately restricted or unavailable in certain browsers. The interface reports that state instead of inventing a value.
 
+## Technical documentation
+
+See [Browser Privacy Inspector: Technical and Security Guide](docs/TECHNICAL_GUIDE.md) for:
+
+- how the application was built and how data flows through it;
+- the exact browser APIs and code patterns used for each result;
+- how to add signals, categories, themes, and risk guidance safely;
+- how ordinary browser features may be abused for fingerprinting, profiling, or deceptive permission requests; and
+- defensive review, testing, and responsible-use guidance.
+
+The threat discussion is intentionally defensive and does not include covert tracking or exploitation code.
+
 ## Local development
 
 No build is required. Open `index.html` directly, or serve the directory locally:
