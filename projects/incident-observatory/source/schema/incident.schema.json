@@ -1,0 +1,459 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Educational Incident",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "title",
+    "sources",
+    "systems",
+    "connections",
+    "actors",
+    "events",
+    "lessons",
+    "mitigations",
+    "uncertainty",
+    "disclaimer",
+    "views",
+    "alerts"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "url"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "systems": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "type",
+          "position",
+          "zone",
+          "synthetic"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "sandbox",
+              "repository",
+              "cluster",
+              "gateway",
+              "server",
+              "identity",
+              "soc"
+            ]
+          },
+          "position": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "number"
+            }
+          },
+          "zone": {
+            "type": "string"
+          },
+          "synthetic": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "from",
+          "to",
+          "label",
+          "synthetic"
+        ]
+      }
+    },
+    "actors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "task",
+          "synthetic"
+        ]
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "dateLabel",
+          "datePrecision",
+          "title",
+          "summary",
+          "sources",
+          "lesson",
+          "focus",
+          "paths",
+          "affected",
+          "status",
+          "at",
+          "duration",
+          "provenance",
+          "severity",
+          "syntheticLog"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "at": {
+            "type": "number",
+            "minimum": 0
+          },
+          "duration": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "affected": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "datePrecision": {
+            "enum": [
+              "day",
+              "interval",
+              "unknown",
+              "report-date"
+            ]
+          },
+          "provenance": {
+            "enum": [
+              "documented-summary",
+              "reconstructed",
+              "fictional"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "info",
+              "medium",
+              "high",
+              "critical"
+            ]
+          },
+          "agentStates": {
+            "type": "array",
+            "items": {
+              "required": [
+                "actorId",
+                "synthetic",
+                "status",
+                "objective",
+                "access",
+                "network",
+                "risk"
+              ],
+              "properties": {
+                "actorId": {
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "NORMAL",
+                    "EXPLORING",
+                    "BLOCKED",
+                    "BOUNDARY VIOLATION",
+                    "EXTERNAL ACCESS",
+                    "PRIVILEGE CHANGE",
+                    "DETECTED",
+                    "TERMINATED"
+                  ]
+                },
+                "synthetic": {
+                  "const": true
+                }
+              },
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "lessons": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "why",
+          "control",
+          "telemetry",
+          "investigate",
+          "question",
+          "answers",
+          "correct",
+          "reasoning"
+        ],
+        "properties": {
+          "answers": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "string"
+            }
+          },
+          "correct": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "mitigations": {
+      "type": "array"
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "disclaimer": {
+      "type": "string"
+    },
+    "views": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "kind": {
+            "enum": [
+              "scene",
+              "soc",
+              "timeline"
+            ]
+          },
+          "camera": {
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "target": {
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "number"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "title",
+          "kind"
+        ],
+        "type": "object"
+      }
+    },
+    "alerts": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "synthetic": {
+            "const": true
+          },
+          "destination": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "eventId",
+          "asset",
+          "source",
+          "destination",
+          "identity",
+          "category",
+          "sensor",
+          "confidence",
+          "investigation",
+          "synthetic",
+          "kind"
+        ],
+        "type": "object"
+      }
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "synthetic": {
+          "const": true
+        },
+        "labels": {
+          "items": {
+            "required": [
+              "text",
+              "x",
+              "z",
+              "color"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "zones": {
+          "items": {
+            "required": [
+              "x",
+              "z",
+              "width",
+              "depth",
+              "color"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "railPositions": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "floor": {
+          "type": "object",
+          "properties": {
+            "step": {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "minX",
+            "maxX",
+            "minZ",
+            "maxZ",
+            "step"
+          ]
+        }
+      },
+      "required": [
+        "synthetic",
+        "zones",
+        "railPositions",
+        "floor",
+        "labels"
+      ]
+    },
+    "drilldowns": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "asset",
+                "kind",
+                "boundary",
+                "permissions",
+                "control"
+              ]
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "title",
+          "summary",
+          "items"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore a source-linked educational reconstruction of the July 2026 OpenAI and Hugging Face incident. Local simulation with interactive infrastructure, telemetry and defensive lessons." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' ws://127.0.0.1:4174; font-src 'self'; object-src 'none'; base-uri 'self'" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>Incident Observatory · Realistic Edition</title>
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">⌁</span><div>INCIDENT <strong>OBSERVATORY</strong><small>SECURITY RECONSTRUCTION LAB</small></div></div>
+    <div class="incident-name">OpenAI / Hugging Face<span>JULY 2026 · WITH MAY–JUNE LEAD-IN</span></div>
+    <button id="tuning-button" class="quiet">Visual tuning</button><button id="sources-button" class="quiet">Sources & accuracy <span aria-hidden="true">↗</span></button>
+  </header>
+  <div class="workspace-bar">
+    <div class="perspective" aria-label="Perspective"><button id="defender" aria-pressed="true">Defender</button><button id="agent" aria-pressed="false">Agent</button></div>
+    <span class="local-badge"><i></i> LOCAL SIMULATION</span>
+    <label class="check"><input id="teach" type="checkbox" /> Teach Me</label>
+    <label class="check"><input id="follow" type="checkbox" checked /> Follow event</label>
+  </div>
+  <main class="workspace">
+    <aside class="chapters"><div class="section-title">INCIDENT SEQUENCE <span id="event-count"></span></div><ol id="event-list"></ol><div class="sidebar-note">Documented events.<br />Compressed presentation time.<br />No real infrastructure connections.</div></aside>
+    <section class="center" aria-label="Interactive reconstruction">
+      <div class="view-toolbar"><label for="view">Architecture</label><select id="view"><option value="infrastructure">3D Infrastructure</option><option value="topology">Network Topology</option><option value="attack">Attack Graph</option><option value="soc">SOC Dashboard</option><option value="timeline">Timeline</option><option value="kubernetes">Kubernetes View</option><option value="identity">Identity / Credentials</option><option value="communication">Agent Communication</option></select><button id="overview" class="quiet">Reset camera</button></div>
+      <div id="visual-surface">
+        <div class="scene-caption"><span class="eyebrow">ILLUSTRATIVE INFRASTRUCTURE</span><h1 id="scene-title">The boundary that became a bridge</h1><p id="scene-hint">Drag to orbit · Scroll to zoom · Select an asset</p></div>
+        <div id="scene" role="img" aria-label="Interactive three-dimensional infrastructure reconstruction. Use the asset selector below for equivalent keyboard access."></div>
+        <div id="labels" aria-hidden="true"></div>
+        <div id="alternative-view" hidden></div>
+        <div class="scene-footer"><div class="legend"><span><i class="normal"></i>Permitted</span><span><i class="unexpected"></i>Unexpected path</span><span><i class="affected"></i>Affected</span><span><i class="response"></i>Response</span></div><span class="topology-note">Schematic layout, not a physical network map</span></div>
+      </div>
+      <div class="metrics" aria-label="Illustrative scene state"><div><span>SCENE AGENTS</span><strong id="active-agents">3</strong></div><div><span>HIGHLIGHTED ASSETS</span><strong id="affected-systems">0</strong></div><div><span>ILLUSTRATIVE SEVERITY</span><strong id="severity">INFO</strong></div><div><span>EVENT</span><strong id="phase">01 / 19</strong></div></div>
+      <section id="drilldown" class="drilldown" aria-label="Architecture details" hidden></section>
+      <section class="telemetry"><div class="section-title"><span id="stream-title">DEFENSIVE TELEMETRY</span><span class="synthetic">SYNTHETIC RECORDS</span></div><div id="terminal" class="terminal" role="log" aria-live="off"></div></section>
+    </section>
+    <aside class="inspector">
+      <div class="section-title">EVENT INTELLIGENCE <span class="documented">SOURCED</span></div>
+      <div id="event-detail" aria-live="polite"></div>
+      <section class="asset-inspector"><label for="asset-select">Inspect asset</label><select id="asset-select"></select><div id="asset-detail"></div></section>
+    </aside>
+  </main>
+  <footer class="transport">
+    <div class="transport-top"><div class="play-buttons"><button id="restart" aria-label="Restart" title="Restart">↺</button><button id="previous" aria-label="Previous event" title="Previous event">|◀</button><button id="play" class="primary">▶ Play</button><button id="next" aria-label="Next event" title="Next event">▶|</button></div><div class="current-time"><strong id="date-label">May–July 2026</strong><span id="elapsed">00:00 / 03:48 · presentation time</span></div><label class="speed-label">Speed<select id="speed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="5">5×</option><option value="10">10×</option></select></label></div>
+    <label class="sr-only" for="scrubber">Incident presentation timeline</label><input id="scrubber" type="range" min="0" max="228" step="0.05" value="0" /><div class="timeline-ends"><span>MAY 2026 · FIRST SIGNALS</span><span>JULY 2026 · INTRUSION & RESPONSE</span><span>HARDENING</span></div>
+  </footer>
+  <dialog id="source-dialog"><div class="dialog-heading"><h2>Sources & reconstruction</h2><button id="close-sources" aria-label="Close sources">✕</button></div><p><a href="https://nahmad0.github.io/">All projects</a> · <a href="https://github.com/nahmad0/nahmad0.github.io/tree/main/projects/incident-observatory/source">Source code</a> · <a href="https://github.com/nahmad0/nahmad0.github.io/blob/main/projects/incident-observatory/source/VISUAL_TUNING_GUIDE.md">Visual tuning guide</a></p><div id="source-content"></div></dialog>
+  <dialog id="teach-dialog"><span class="eyebrow">TEACH ME · DEFENSIVE REASONING</span><h2 id="question"></h2><div id="answers"></div><p id="answer-feedback" aria-live="polite"></p><button id="continue-lesson" class="primary">Return to event</button></dialog>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
+

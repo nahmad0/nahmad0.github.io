@@ -132,3 +132,11 @@ The root index.html is now the personal website directory at https://nahmad0.git
 Keep newsletter.html, the other cybersecurity pages, styles.css, script.js, img/, and vid/ together at this repository root. Existing newsletter Home and Sign Up links point to newsletter.html, including its #signup-section anchor. The newsletter's backend endpoints and shared media remain unchanged.
 
 GitHub Pages deploys the root of the main branch. Update and push this repository to change the main landing page. Cipher Vault has a separate repository and deployment workflow. Its public/websites/index.html mirrors this directory; if editing project cards, keep both copies in sync. The landing page contains ordinary links, not embedded copies of the linked sites.
+
+## Incident Observatory
+
+- [Live educational lab](https://nahmad0.github.io/projects/incident-observatory/)
+- [Editable source and rebuild instructions](projects/incident-observatory/README.md)
+- [Visual tuning guide](projects/incident-observatory/source/VISUAL_TUNING_GUIDE.md)
+
+The homepage, Tools & Resources learning list, and Cipher Vault project directory link to this lab. Sourced history is distinguished from synthetic infrastructure and telemetry. The original local edition is preserved separately.

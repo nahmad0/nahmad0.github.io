@@ -231,7 +231,7 @@ fetch("https://news-api-proxy-glax.vercel.app/api/visitor-info")
 //IP chekcer
 
 
-document.getElementById('ip-check-form').addEventListener('submit', async (e) => {
+document.getElementById('ip-check-form')?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const ip = document.getElementById('ip-input').value.trim();
   const messageBox = document.getElementById('ip-check-message');
